@@ -8,8 +8,8 @@ function App() {
   const [text, setText] = useState([]);
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
-    console.log('hello world');
+    e.preventDefault();
+    setText(data);
   }
   
   return (
@@ -25,6 +25,11 @@ function App() {
       />
       <button type='submit' className='btn'>generate</button>
     </form>
+    <article className='lorem-ipsum'>
+      {text.map((item, index) => {
+        return <p key={index}>{item}</p>
+      })}
+    </article>
   </section>
     )
 }
