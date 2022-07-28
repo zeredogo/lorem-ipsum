@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
-import './App.css'
+import './App.css';
 import data from './data';
+
+
 function App() {
-  
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.prevenDefault();
+    console.log('hello world');
+  }
   
   return (
-  <h2>lorem ipsum project setup</h2>
+  <section className='sction-center'>
+    <h3>tired of boring lorem ipsum?</h3>
+    <form className='lorem-form' onSubmit={handleSubmit}></form>
+  </section>
     )
 }
 
